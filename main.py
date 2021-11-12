@@ -1,4 +1,4 @@
-from turtle import Screen, Turtle, colormode, heading, position
+from turtle import Screen, Turtle, colormode, heading, pensize, position
 import random
 
 timmy = Turtle()
@@ -6,7 +6,7 @@ timmy = Turtle()
 timmy.shape("turtle")
 timmy.color("green")
 
-timmy.pensize(15)
+# timmy.pensize(15)
 timmy.speed("fastest")
 
 colormode(255)
@@ -111,12 +111,27 @@ def random_color():
 
 # Spirograph Lesson
 
-for degree in range(0, 18):
-    for n in range(50, 201, 50):
-        timmy.color(random_color())
-        timmy.circle(n)
-        timmy.left(5)
+# for degree in range(0, 18):
+#     for n in range(50, 201, 50):
+#         timmy.color(random_color())
+#         timmy.circle(n)
+#         timmy.left(5)
 
+#
+# for _ in range(36):
+#     timmy.color(random_color())
+#     timmy.circle(100)
+#     timmy.setheading(timmy.heading() + 10)
+
+def draw_spirograph(size_of_gap):
+    gap_int = int(360 / size_of_gap)
+    for _ in range(gap_int):
+        timmy.color(random_color())
+        timmy.circle(100)
+        timmy.setheading(timmy.heading() + size_of_gap)
+
+
+draw_spirograph(3)
 
 screen = Screen()
 screen.exitonclick()
