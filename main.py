@@ -1,4 +1,4 @@
-from turtle import Screen, Turtle, heading, position
+from turtle import Screen, Turtle, colormode, heading, position
 import random
 
 timmy = Turtle()
@@ -6,10 +6,21 @@ timmy = Turtle()
 timmy.shape("turtle")
 timmy.color("green")
 
-colors = ["red", "green", "blue", "purple", "pink", "DarkViolet", "aquamarine"]
+timmy.pensize(15)
+timmy.speed("fastest")
 
 
 # Lesson solution
+# colormode(255)
+
+
+# def random_color():
+#     r = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     return (r, g, b)
+
+
 # def draw_shape(num_sides):
 #     angle = 360 / num_sides
 #     for _ in range(num_sides):
@@ -17,23 +28,27 @@ colors = ["red", "green", "blue", "purple", "pink", "DarkViolet", "aquamarine"]
 #         timmy.right(angle)
 
 
-# for sides in range(3, 15):
-#     timmy.color(random.choice(colors))
+# for sides in range(3, 20):
+#     timmy.color(random_color())
 #     draw_shape(sides)
 
 
-# My solution - color picker doesn't work
+# My solution
 
-# def color_value():
-#     return random.randrange(0, 255)
+# colormode(255)
+
+
+# def random_color():
+#     r = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     return (r, g, b)
+
 
 # shape_sides = [3, 4, 5, 6, 7, 8, 9, 10]
 
 # for shape in shape_sides:
-#     r = color_value()
-#     g = color_value()
-#     b = color_value()
-#     timmy.pencolor(r, g, b)
+#     timmy.color(random_color())
 #     for _ in range(shape):
 #         angle = 360 / shape
 #         timmy.forward(100)
@@ -63,21 +78,21 @@ colors = ["red", "green", "blue", "purple", "pink", "DarkViolet", "aquamarine"]
 
 
 # My Solution
-headings = [0, 90, 180, 270]
+# headings = [0, 90, 180, 270]
 
-timmy.pensize(15)
-timmy.speed("fastest")
+# timmy.pensize(15)
+# timmy.speed("fastest")
 
-keep_walking = True
+# keep_walking = True
 
-while keep_walking:
-    timmy.color(random.choice(colors))
-    timmy.setheading(random.choice(headings))
-    timmy.forward(50)
-    if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
-        keep_walking = True
-    else:
-        keep_walking = False
+# while keep_walking:
+#     timmy.color(random.choice(colors))
+#     timmy.setheading(random.choice(headings))
+#     timmy.forward(50)
+#     if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
+#         keep_walking = True
+#     else:
+#         keep_walking = False
 
 # The lessons:
 # timmy.pensize(15)
@@ -87,6 +102,34 @@ while keep_walking:
 #     timmy.color(random.choice(colors))
 #     timmy.forward(40)
 #     timmy.setheading(random.choice(headings))
+
+
+# Getting that random color to work
+
+
+colormode(255)
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r, g, b)
+
+
+headings = [0, 90, 180, 270]
+
+keep_walking = True
+
+while keep_walking:
+    # timmy.color(random.choice(colors))
+    timmy.color(random_color())
+    timmy.setheading(random.choice(headings))
+    timmy.forward(50)
+    if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
+        keep_walking = True
+    else:
+        keep_walking = False
 
 
 # screen = Screen()
