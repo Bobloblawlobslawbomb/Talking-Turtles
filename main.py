@@ -62,26 +62,39 @@ colors = ["red", "green", "blue", "purple", "pink", "DarkViolet", "aquamarine"]
 #   timmy.degrees(4)
 
 
-def rand_dir():
-    facings = range(0, 4)
-    direction = random.choice(facings)
-    return direction
+# My Solution
+# def rand_dir(): #lose this - use lessons
+#     facings = range(0, 4)
+#     direction = random.choice(facings)
+#     return direction
 
 
-timmy.position()
+# timmy.position()
 
+# headings/directions
 headings = [0, 90, 180, 270]
 
-keep_walking = True
+# keep_walking = True
 
-while keep_walking:
+# while keep_walking:
+#     timmy.color(random.choice(colors))
+#     timmy.left(headings[rand_dir()])
+#     timmy.setheading(random.choice(headings))
+#     timmy.forward(10)
+#     if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
+#         keep_walking = True
+#     else:
+#         keep_walking = False
+
+# The lessons:
+timmy.pensize(15)
+timmy.speed("fastest")
+
+for _ in range(200):
     timmy.color(random.choice(colors))
-    timmy.left(headings[rand_dir()])
-    timmy.forward(10)
-    if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
-        keep_walking = True
-    else:
-        keep_walking = False
+    timmy.forward(40)
+    timmy.setheading(random.choice(headings))
+
 
 screen = Screen()
 screen.exitonclick()
