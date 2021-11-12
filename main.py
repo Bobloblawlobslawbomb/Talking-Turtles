@@ -9,17 +9,16 @@ timmy.color("green")
 timmy.pensize(15)
 timmy.speed("fastest")
 
+colormode(255)
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r, g, b)
 
 # Lesson solution
-# colormode(255)
-
-
-# def random_color():
-#     r = random.randint(0, 255)
-#     g = random.randint(0, 255)
-#     b = random.randint(0, 255)
-#     return (r, g, b)
-
 
 # def draw_shape(num_sides):
 #     angle = 360 / num_sides
@@ -34,16 +33,6 @@ timmy.speed("fastest")
 
 
 # My solution
-
-# colormode(255)
-
-
-# def random_color():
-#     r = random.randint(0, 255)
-#     g = random.randint(0, 255)
-#     b = random.randint(0, 255)
-#     return (r, g, b)
-
 
 # shape_sides = [3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -86,7 +75,7 @@ timmy.speed("fastest")
 # keep_walking = True
 
 # while keep_walking:
-#     timmy.color(random.choice(colors))
+#     timmy.color(random_color())
 #     timmy.setheading(random.choice(headings))
 #     timmy.forward(50)
 #     if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
@@ -99,38 +88,35 @@ timmy.speed("fastest")
 # timmy.speed("fastest")
 
 # for _ in range(200):
-#     timmy.color(random.choice(colors))
+#     timmy.color(random_color())
 #     timmy.forward(40)
 #     timmy.setheading(random.choice(headings))
 
 
 # Getting that random color to work
 
+# headings = [0, 90, 180, 270]
 
-colormode(255)
+# keep_walking = True
 
-
-def random_color():
-    r = random.randint(0, 255)
-    g = random.randint(0, 255)
-    b = random.randint(0, 255)
-    return (r, g, b)
-
-
-headings = [0, 90, 180, 270]
-
-keep_walking = True
-
-while keep_walking:
-    # timmy.color(random.choice(colors))
-    timmy.color(random_color())
-    timmy.setheading(random.choice(headings))
-    timmy.forward(50)
-    if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
-        keep_walking = True
-    else:
-        keep_walking = False
+# while keep_walking:
+#     timmy.color(random_color())
+#     timmy.setheading(random.choice(headings))
+#     timmy.forward(50)
+#     if timmy.ycor() <= 535 and timmy.ycor() >= -535 and timmy.xcor() <= 639 and timmy.xcor() >= -639:
+#         keep_walking = True
+#     else:
+#         keep_walking = False
 
 
-# screen = Screen()
-# screen.exitonclick()
+# Spirograph Lesson
+
+for degree in range(0, 18):
+    for n in range(50, 201, 50):
+        timmy.color(random_color())
+        timmy.circle(n)
+        timmy.left(5)
+
+
+screen = Screen()
+screen.exitonclick()
